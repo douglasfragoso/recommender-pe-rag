@@ -1,36 +1,41 @@
-# 🤖 Multi AI Assistant with RAG 
+# 🤖 Multi AI Assistant with RAG
 
-## 📋 Sobre o Projeto
+## About the Project
 
-Sistema de assistente de IA com múltiplos provedores (DeepSeek, Gemini, Ollama) integrando **RAG (Retrieval-Augmented Generation)** e **streaming em tempo real**. A aplicação permite conversas contextuais com base em documentos carregados, utilizando técnicas avançadas de processamento de linguagem natural.
+AI assistant system with multiple providers (DeepSeek, Gemini, Ollama) integrating **RAG (Retrieval-Augmented Generation)** and **real-time streaming**. The application enables contextual conversations based on loaded documents, utilizing advanced natural language processing techniques.
 
-## 🚀 Características Principais
+## Key Features
 
-### 🤖 Multi-Modelo
-- **DeepSeek**: API compatível com OpenAI
-- **Google Gemini**: Modelo avançado do Google  
-- **Ollama**: Modelos locais (Llama 3.1 8B)
+### Multi-Model
+- **DeepSeek**: OpenAI-compatible API
+- **Google Gemini**: Advanced Google model
+- **Ollama**: Local models (Llama 3.1 8B)
 
-### 🔍 Sistema RAG Avançado
-- **Document Splitting**: Chunks otimizados (500 caracteres + 50 overlap)
-- **Embedding Local**: Modelo BGE Small EN V1.5 Quantized (ONNX)
-- **Busca Semântica**: Recuperação por similaridade vetorial
-- **In-Memory Store**: Armazenamento eficiente de embeddings
-- **Chat Persistence**: Armazenamento do chat no banco de dados relacional
+### Advanced RAG System
+- **Document Splitting**: Optimized chunks (500 characters + 50 overlap)
+- **Local Embedding**: BGE Small EN V1.5 Quantized model (ONNX)
+- **Semantic Search**: Vector similarity retrieval
+- **In-Memory Store**: Efficient embedding storage
+- **Chat Persistence**: Chat storage in relational database
 
-### ⚡ Tecnologias
+### Technologies
 - **Java 25** + **Spring Boot 3.5.7**
-- **LangChain4j** - Framework de IA
-- **WebFlux** - Streaming reativo
-- **Swagger/OpenAPI** - Documentação interativa
-- **Actuator** - Monitoramento e métricas
-- **MySQL** - Banco de Dados Relacional
+- **LangChain4j** - AI Framework
+- **WebFlux** - Reactive streaming
+- **Swagger/OpenAPI** - Interactive documentation
+- **Actuator** - Monitoring and metrics
+- **MySQL** - Relational Database
 
-## 📖 Documentação Interativa
+## Interactive Documentation
 
-Acesse a documentação Swagger em: http://localhost:8080/swagger-ui.html
+Access the Swagger documentation at: http://localhost:8080/swagger-ui.html
 
-## 🧪 Testes
+## Tests
+
+### Endpoint - Ollama
+```sh
+curl -X POST http://localhost:8080/ai/chat/ollama -H "Content-Type: application/json" -d "{\"message\": \"What do you know about the recommendation system?\"}"
+```
 
 ### Endpoint - Ollama
 ```sh
@@ -45,15 +50,15 @@ curl -X POST http://localhost:8080/ai/chat/gemini -H "Content-Type: application/
 ```sh
 curl -X POST http://localhost:8080/ai/chat/deepseek -H "Content-Type: application/json" -d "{\"message\": \"O que voce sabe sobre o sistema de recomendação?\"}"
 ``` 
-### Endpoint - Verificar o helth do sistema
+### Endpoint - Check system health
 ```sh
 curl "http://localhost:8080/ai/health"
 ``` 
-### Endpoint - Verificar status dos listeners (RAG, Chat, Embedding)
+### Check listeners status (RAG, Chat, Embedding)
 ```sh
 curl "http://localhost:8080/ai/listeners/status"
 ``` 
-### Endpoint - Teste de streaming básico
+### Endpoint - Basic streaming test
 ```sh
 curl -N "http://localhost:8080/ai/test/stream"
 ``` 
