@@ -57,5 +57,4 @@ curl "http://localhost:8080/ai/listeners/status"
 ```sh
 curl -N "http://localhost:8080/ai/test/stream"
 ``` 
-
- Feito com carinho por Douglas Fragoso 👊
+Important: Ensure the [Frontend Service](https://github.com/douglasfragoso/recommender-pe-rag-react) is running after starting the backend.
