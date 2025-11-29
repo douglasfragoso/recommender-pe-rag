@@ -34,11 +34,6 @@ Access the Swagger documentation at: http://localhost:8080/swagger-ui.html
 
 ### Endpoint - Ollama
 ```sh
-curl -X POST http://localhost:8080/ai/chat/ollama -H "Content-Type: application/json" -d "{\"message\": \"What do you know about the recommendation system?\"}"
-```
-
-### Endpoint - Ollama
-```sh
  curl -X POST http://localhost:8080/ai/chat/ollama -H "Content-Type: application/json" -d "{\"message\": \"O que voce sabe sobre o sistema de recomendação?\"}"
 ```
 
